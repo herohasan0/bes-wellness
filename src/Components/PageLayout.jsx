@@ -52,7 +52,7 @@ export default function PageLayout({ children }) {
             </li>
             <li>
               <Link
-                href="/pagewto"
+                href="/radiology"
                 className="flex items-center p-2 rounded-lg text-gray-800 hover:text-white  hover:bg-gray-700 group"
               >
                 <svg
