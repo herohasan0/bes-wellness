@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.react-chatbot-kit-chat-container {
+  width: 100% !important;
+  height: 73vh !important;
+  overflow: hidden !important;
+}
+
+.react-chatbot-kit-chat-inner-container {
+  height: 100% !important;
+}
+
+.react-chatbot-kit-chat-header {
+  background-color: #004892 !important;
+  color: #fff !important;
+  border-radius: 0 !important;
+  padding-top: 1.2rem !important;
+  padding-bottom: 1.2rem !important;
+  font-weight: normal !important;
+  font-family: inherit !important;
+  box-shadow: 0px -20px 50px -12px rgb(0 0 0 / 0.3);
+  padding: 16px !important;
+}
+
+.react-chatbot-kit-chat-input-container {
+}
+
+.react-chatbot-kit-chat-message-container {
+  overflow: auto !important;
+  height: 100% !important;
+  padding-bottom: 200px !important;
+}
+
+.react-chatbot-kit-chat-input {
+  border-bottom-left-radius: 13px !important;
+  outline: none;
+}
+
+.react-chatbot-kit-chat-input-form {
+}
+
+.react-chatbot-kit-chat-input::placeholder {
+}
+
+.react-chatbot-kit-chat-btn-send {
+  background-color: #004892 !important;
+}
+
+.react-chatbot-kit-chat-btn-send-icon {
+}
+
+.react-chatbot-kit-chat-bot-message-container {
+  width: fit-content !important;
+}
+
+.react-chatbot-kit-chat-bot-avatar-container {
+}
+
+.react-chatbot-kit-chat-bot-avatar-icon {
+}
+
+.react-chatbot-kit-chat-bot-avatar-letter {
+}
+
+.react-chatbot-kit-chat-bot-message {
+}
+
+.react-chatbot-kit-chat-bot-message-arrow {
+}
+
+.react-chatbot-kit-chat-bot-loading-icon-container {
+}
+
+.chatbot-loader-container {
+}
+
+#chatbot-loader #chatbot-loader-dot1 {
+}
+
+#chatbot-loader #chatbot-loader-dot2 {
+}
+
+#chatbot-loader #chatbot-loader-dot3 {
+}
+
+.react-chatbot-kit-error {
+}
+
+.react-chatbot-kit-error-container {
+}
+
+.react-chatbot-kit-error-header {
+}
+
+.react-chatbot-kit-error-docs {
+}

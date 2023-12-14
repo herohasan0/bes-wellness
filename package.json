@@ -13,10 +13,9 @@
     "flowbite": "^2.2.0",
     "next": "14.0.4",
     "react": "^18",
+    "react-chatbot-kit": "^2.2.1",
     "react-dom": "^18",
-    "react-simple-chatbot": "^0.6.1",
-    "react-table": "7.8.0",
-    "styled-components": "^6.1.1"
+    "react-table": "7.8.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

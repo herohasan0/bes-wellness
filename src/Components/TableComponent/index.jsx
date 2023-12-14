@@ -6,7 +6,6 @@ export default function TableComponent({
   data = [],
   columns = [],
   handleRowClick = () => {},
-  noRowbg,
   handleColumnClick = () => {},
   className,
 }) {
@@ -59,7 +58,7 @@ export default function TableComponent({
                   onClick={(e) => handleColumnClick(e)}
                   key={i}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
-                  className="bg-gray-100 text-gray-700 font-medium text-xs text-left py-5 px-3 uppercase"
+                  className="bg-white text-gray-700 font-medium text-xs text-left py-5 px-3 uppercase border-b-2 border-gray-200/80"
                 >
                   {column.render("Header")}
                   <span>
@@ -84,8 +83,7 @@ export default function TableComponent({
                   onClick={() => handleRowClick(row)}
                   {...row.getRowProps()}
                   className={classNames(
-                    "transition border-b border-gray-100",
-                    noRowbg && "hover:bg-transparent",
+                    "transition border-b border-gray-200/80 bg-white",
                     handleRowClick && "cursor-pointer"
                   )}
                 >
