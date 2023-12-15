@@ -5,8 +5,41 @@ import Person from "./Icons/Person";
 import Report from "./Icons/Report";
 import Dashboard from "./Icons/Dashboard";
 import Message from "./Icons/Message";
+import Tab from "./SideMenu/Tab";
+import { useRouter } from "next/router";
+
+const LINKS = [
+  {
+    id: 0,
+    title: "Kisisel",
+    icon: <Person />,
+    href: "/",
+  },
+  {
+    id: 1,
+    title: "Tahlillerim",
+    icon: <Report />,
+    href: "/analysis",
+  },
+  {
+    id: 2,
+    title: "Radyolojk Görüntülerim",
+    icon: <Dashboard />,
+    href: "/radiology",
+  },
+  {
+    id: 3,
+    title: "AI Therapist",
+    icon: <Message />,
+    href: "/ai-asistant",
+  },
+];
 
 export default function PageLayout({ children }) {
+  const { pathname } = useRouter();
+
+  console.log("pathname", pathname);
+
   return (
     <>
       <nav className="fixed w-full z-40 border-b-2 border-solid border-[#D1D5DB]/60 bg-white">
@@ -31,48 +64,15 @@ export default function PageLayout({ children }) {
       >
         <div className="h-full pt-5 overflow-y-auto border-b-2 border-solid border-[#D1D5DB]/60 bg-white">
           <ul className="space-y-2 font-medium pt-24">
-            <li>
-              <Link
-                href="/"
-                className="flex items-center py-2.5 text-[#797E9F] hover:text-white hover:bg-gray-700 group pl-5 "
-              >
-                <Person />
-                <span className="flex-1 ms-3 whitespace-nowrap">Kisisel</span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/analysis"
-                className="flex items-center py-2.5 text-[#797E9F] hover:text-white hover:bg-gray-700 group pl-5 "
-              >
-                <Report />
-                <span className="flex-1 ms-3 whitespace-nowrap">
-                  Tahlillerim
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/radiology"
-                className="flex items-center py-2.5 text-[#797E9F] hover:text-white  hover:bg-gray-700 group pl-5"
-              >
-                <Dashboard />
-                <span className="flex-1 ms-3 whitespace-nowrap">
-                  Radyolojk Görüntülerim
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/ai-asistant"
-                className="flex items-center py-2.5 text-[#797E9F] hover:text-white  hover:bg-gray-700 group pl-5"
-              >
-                <Message />
-                <span className="flex-1 ms-3 whitespace-nowrap">
-                  AI Therapist
-                </span>
-              </Link>
-            </li>
+            {LINKS.map((link) => (
+              <Tab
+                key={link.id}
+                title={link.title}
+                href={link.href}
+                icon={link.icon}
+                isActive={pathname === link.href}
+              />
+            ))}
           </ul>
         </div>
       </aside>

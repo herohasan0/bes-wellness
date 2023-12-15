@@ -1,17 +1,19 @@
+import classNames from "classnames";
 import Link from "next/link";
 import React from "react";
-import Person from "../Icons/Person";
 
-export default function Tab({ title, href }) {
+export default function Tab({ title, href, icon, isActive }) {
   return (
     <li>
       <Link
-        href="/"
-        className="flex items-center py-2.5 text-[#797E9F] hover:text-white hover:bg-gray-700 group pl-5 "
+        href={href}
+        className={classNames(
+          "flex items-center py-2.5 text-[#797E9F] hover:text-white hover:bg-gray-700 group pl-5",
+          isActive && "text-[#004892] border-r-2 border-r-[#004892] font-medium"
+        )}
       >
-        <Person />
-
-        <span className="flex-1 ms-3 whitespace-nowrap">Kisisel</span>
+        {icon}
+        <span className="flex-1 ms-3 whitespace-nowrap">{title}</span>
       </Link>
     </li>
   );
