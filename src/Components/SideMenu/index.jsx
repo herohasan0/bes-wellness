@@ -36,6 +36,8 @@ const LINKS = [
 export default function SideMenu() {
   const { pathname } = useRouter();
 
+  console.log("pathname", pathname);
+
   return (
     <aside
       id="default-sidebar"
