@@ -10,7 +10,7 @@ export default function index() {
   return (
     <PageLayout>
       <div className="">
-        <h5 className="text-2xl mb-2 uppercase">TAHLİLLERİM</h5>
+        <h5 className="text-2xl mb-2 uppercase">AI Asistan</h5>
         <p className="mb-4 text-sm text-gray-500">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
