@@ -1,5 +1,5 @@
-import PageLayout from "@/components/PageLayout";
-import TableComponent from "@/components/TableComponent";
+import PageLayout from "@/Components/PageLayout";
+import TableComponent from "@/Components/TableComponent";
 import Image from "next/image";
 import React from "react";
 
