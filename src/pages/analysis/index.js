@@ -1,5 +1,5 @@
-import PageLayout from "@/Components/PageLayout";
-import TableComponent from "@/Components/TableComponent";
+import PageLayout from "@/components/PageLayout";
+import TableComponent from "@/components/TableComponent";
 import React from "react";
 
 export default function index() {

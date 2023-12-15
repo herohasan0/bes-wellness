@@ -1,7 +1,7 @@
-import ActionProvider from "@/Components/ChatBot/ActionProvider";
-import MessageParser from "@/Components/ChatBot/MessageParser";
-import config from "@/Components/ChatBot/config";
-import PageLayout from "@/Components/PageLayout";
+import ActionProvider from "@/components/ChatBot/ActionProvider";
+import MessageParser from "@/components/ChatBot/MessageParser";
+import config from "@/components/ChatBot/config";
+import PageLayout from "@/components/PageLayout";
 import React from "react";
 import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
