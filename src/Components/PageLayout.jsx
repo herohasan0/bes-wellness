@@ -29,6 +29,29 @@ export default function PageLayout({ children }) {
           <ul className="space-y-2 font-medium pt-24">
             <li>
               <Link
+                href="/"
+                className="flex items-center py-2.5 text-[#797E9F] hover:text-white hover:bg-gray-700 group pl-5 "
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+                  />
+                </svg>
+
+                <span className="flex-1 ms-3 whitespace-nowrap">Kisisel</span>
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/analysis"
                 className="flex items-center py-2.5 text-[#797E9F] hover:text-white hover:bg-gray-700 group pl-5 "
               >
