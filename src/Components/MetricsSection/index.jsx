@@ -81,10 +81,10 @@ export default function MetricsSection() {
                 <label className="font-medium text-3xl">
                   87{" "}
                   <span className="text-sm text-gray-200 font-normal">
-                    mmHg
+                    hours
                   </span>
                 </label>
-                <span className="font-medium text-base">Blood Pressure</span>
+                <span className="font-medium text-base">Sleep</span>
                 <div className="w-16 h-16 mt-2">
                   <StatisticIcon />
                 </div>

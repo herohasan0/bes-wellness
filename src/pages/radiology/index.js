@@ -1,147 +1,172 @@
 import PageLayout from "@/Components/PageLayout";
 import TableComponent from "@/Components/TableComponent";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
+import { Dialog } from "@headlessui/react";
+import OpenModal from "@/Components/OpenModal";
+import SparklesIcon from "@/Components/Icons/SparklesIcon";
 
-export default function index() {
+export default function Radiology() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const closeHandle = () => {
+    setIsOpen(false);
+  };
+
   const headers = [
+    {
+      Header: "Tarih",
+      accessor: "tarih",
+    },
+    {
+      Header: "Ön İzleme",
+      accessor: "radyo",
+      Cell: ({ row }) => (
+        <div>
+          <Image width={60} height={60} src={"/rontgen-1.jpeg"} />
+        </div>
+      ),
+    },
+
     {
       Header: "Kurum Adi",
       accessor: "kurumAdi",
       //   Cell: ({ row }) => <div>sdfasdf</div>,
     },
+
     {
-      Header: "Radyo",
-      accessor: "radyo",
-      Cell: ({ row }) => (
-        <div>
-          <Image
-            width={60}
-            height={60}
-            src={
-              "https://images.unsplash.com/photo-1695653422881-6372da5e29e5?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxNnx8fGVufDB8fHx8fA%3D%3D"
-            }
-          />
-        </div>
-      ),
-    },
-    {
-      Header: "Islem Adi",
+      Header: "Açıklama",
       accessor: "islemAdi",
     },
+
     {
-      Header: "Sonuc",
-      accessor: "sonuc",
-    },
-    {
-      Header: "Sonuç Birimi",
-      accessor: "sonucBirimi",
-    },
-    {
-      Header: "Referans Degeri",
-      accessor: "referansDegeri",
-    },
-    {
-      Header: "Rapor",
+      Header: "Asistana Sor",
       accessor: "rapor",
       Cell: ({}) => (
-        <div className="pl-3">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-5 h-5"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-            />
-          </svg>
+        <div className="pl-6" onClick={() => setIsOpen(true)}>
+          <SparklesIcon />
         </div>
       ),
-    },
-    {
-      Header: "Tarih",
-      accessor: "tarih",
     },
   ];
 
   const data = [
     {
-      kurumAdi: "Acibadem",
-      islemAdi: "Tam Kan Sayimi (Hemogram)",
-      sonuc: 300,
-      sonucBirimi: "ug/dL",
-      referansDegeri:
-        "< 200 * Karar Sinir : > 200 mg/dL Kardiyovasküler hastalk riski",
-      rapor: "Goruntule",
       tarih: "03.10.2023",
+      kurumAdi: "ISTANBUL ÖZEL SAFAK TIP MERKEZI",
+      islemAdi: "Omurga kırığı",
     },
     {
-      kurumAdi: "Acibadem",
-      islemAdi: "Tam Kan Sayimi (Hemogram)",
-      sonuc: 300,
-      sonucBirimi: "ug/dL",
-      referansDegeri:
-        "< 200 * Karar Sinir : > 200 mg/dL Kardiyovasküler hastalk riski",
-      rapor: "Goruntule",
-      tarih: "03.10.2023",
+      tarih: "15.06.2023",
+      kurumAdi: "ISTANBUL HASEKI EGITIM VE ARASTIRMA HASTANESI",
+      islemAdi: "BT, Beyin",
     },
     {
-      kurumAdi: "Acibadem",
-      islemAdi: "Tam Kan Sayimi (Hemogram)",
-      sonuc: 300,
-      sonucBirimi: "ug/dL",
-      referansDegeri:
-        "< 200 * Karar Sinir : > 200 mg/dL Kardiyovasküler hastalk riski",
-      rapor: "Goruntule",
-      tarih: "03.10.2023",
+      tarih: "01.03.2023",
+      kurumAdi: "KIRKLARELI EGITIM VE ARASTIRMA HASTANESI",
+      islemAdi: "Vertebra grafi.",
     },
     {
-      kurumAdi: "Acibadem",
-      islemAdi: "Tam Kan Sayimi (Hemogram)",
-      sonuc: 300,
-      sonucBirimi: "ug/dL",
-      referansDegeri:
-        "< 200 * Karar Sinir : > 200 mg/dL Kardiyovasküler hastalk riski",
-      rapor: "Goruntule",
       tarih: "03.10.2023",
+      kurumAdi: "ISTANBUL ÖZEL SAFAK TIP MERKEZI",
+      islemAdi: "Omurga kırığı",
     },
     {
-      kurumAdi: "Acibadem",
-      islemAdi: "Tam Kan Sayimi (Hemogram)",
-      sonuc: 300,
-      sonucBirimi: "ug/dL",
-      referansDegeri:
-        "< 200 * Karar Sinir : > 200 mg/dL Kardiyovasküler hastalk riski",
-      rapor: "Goruntule",
       tarih: "03.10.2023",
+      kurumAdi: "ISTANBUL ÖZEL SAFAK TIP MERKEZI",
+      islemAdi: "Omurga kırığı",
+    },
+    {
+      tarih: "03.10.2023",
+      kurumAdi: "ISTANBUL ÖZEL SAFAK TIP MERKEZI",
+      islemAdi: "Omurga kırığı",
+    },
+    {
+      tarih: "03.10.2023",
+      kurumAdi: "ISTANBUL ÖZEL SAFAK TIP MERKEZI",
+      islemAdi: "Omurga kırığı",
     },
   ];
 
   return (
-    <PageLayout>
-      <div className="">
-        <h5 className="text-2xl mb-2 uppercase">RADYOLOJİK GÖRÜNTÜLERİM</h5>
-        <p className="mb-4 text-sm text-gray-500">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <TableComponent columns={headers} data={data} />
-      </div>
-    </PageLayout>
+    <>
+      <PageLayout>
+        <div className="">
+          <h5 className="text-2xl mb-2 uppercase">RADYOLOJİK GÖRÜNTÜLERİM</h5>
+          <p className="mb-4 text-sm text-gray-500">
+            Şeffaf bir bakış açısıyla sağlığınızı gözler önüne serin! Radyolojik
+            görüntülerinizi bu ekranda kolayca gözden geçirin. Yenilikçi AI
+            teknolojisi ile görüntülerin hızlı analizi, size anında sonuçlar
+            sunarak sağlık durumunuz hakkında daha fazla bilgi edinmenizi
+            sağlar.
+          </p>
+          <TableComponent columns={headers} data={data} />
+        </div>
+      </PageLayout>
+      <OpenModal
+        isOpen={isOpen}
+        closeModalProp={closeHandle}
+        title="Analiz Sonucu"
+        maxWidth="w-[600px]"
+        containerClassName="relative"
+        className="!px-12 py-10"
+      >
+        <button
+          className="absolute right-10 top-9"
+          onClick={() => {
+            setIsOpen(false);
+          }}
+        >
+          x
+        </button>
+        <div className="text-sm flex items-center justify-center flex-col space-y-3 mt-3">
+          <p>
+            Öncelikle, ben bir yapay zeka modeliyim ve tıbbi bir uzman değilim.
+            Bu nedenle, profesyonel bir tıbbi teşhis koymak için gerekli
+            uzmanlığa ve lisansa sahip değilim, sizinle bu konuda herhangi bir
+            bilgi paylaşamam. Şu anda gördüğünüz, bilgisayarınızın ekranından
+            size sunulan radyoloji görüntüsü hakkında özel yapan bir yapay zeka
+            tarafından yapılmıştır. Lomber (bel) omurga bölgesinin bir
+            bilgisayarlı tomografi (BT) taramasının sagittal (yan) kesitinin
+            görüntüsüdür. Gözle görülür omurların ve potansiyel tansiyal
+            isaretlerin bir listesi şu şekilde olabilir:
+          </p>
+          <ol className="list-decimal">
+            <li>
+              Vertebra (omur) yapılarında, özellikle Lomber bölgede, belirgin
+              düzensizlikler ve yapısal anomoliler görünmektedir. Bu durum,
+              dejeneratif disk hastalığı, vertebra kırıkları veya enfeksiyon
+              gibi durumlar düşündürebilir.
+            </li>
+            <li className="mt-3">
+              İntervertebral disk alanlarında yükseklik azalması ve belki de
+              disk dejenerasyonu işaret eden bulgular gözlemlenebilir. Bu tür
+              bir dejenerasyon kronik sırt ağrısı, omurga stabilitesinde azalma
+              veya sinir basısını gibi semptomlara yol açabilir.
+            </li>
+            <li className="mt-3">
+              Omurga eğriliği (skolyoz veya lordoz gibi) göze çarpmaktadır. Bu,
+              omurga problemleri ile bir şekilde eğilmesine veya dönmesine neden
+              olabilir ve ağrı, hareket kısıtlılığı ve diğer nörolojik
+              semptomlara yol açabilir.
+            </li>
+            <li className="mt-3">
+              Belirli omurlar arasında, özellikle diskler üzerine oluşan
+              posteriyor (arka) kısımında, potansiyel spinal stenoz veya
+              kısalmış boşluklar bulunabilir ki bu durumlar da omurilik veya
+              sinirler üzerine baskı yaparak ağrı, uyuşma veya diğer semptomlara
+              neden olabilir.
+            </li>
+          </ol>
+          <p>
+            Bu bulgular ve diğer olası semptomlar, ilgili tıbbi testler (MR
+            görüntüleme gibi) üzerinebilir. Ayrıca, bir medikal tedavi
+            yapabilmek için, gerekli tıbbi müdahale ve tedavi yöntemleri tıbbi
+            olarak tedavi edilemezler. Gerçek bir teşhis ve tedavi planı için
+            lisanslı bir tıbbi uzmana danışmalısınız.
+          </p>
+        </div>
+      </OpenModal>
+    </>
   );
 }

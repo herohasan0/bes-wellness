@@ -1,7 +1,7 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 
 const config = {
-  initialMessages: [createChatBotMessage(`?`)],
+  initialMessages: [createChatBotMessage(`Size nasıl destek olabilirim?`)],
   widgets: [
     {
       widgetName: "adviceList",
