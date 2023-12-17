@@ -20,8 +20,11 @@ export default function MetricsSection() {
             placeholder="Seach anything..."
           />
         </div>
-        <div className="flex space-x-2">
-          <div className="border border-gray-400 p-2.5 cursor-pointer rounded">
+        <div className="flex space-x-3">
+          <div className="border relative border-gray-400 p-2.5 cursor-pointer rounded">
+            <span className="absolute -top-3 -right-2 bg-[#FA4E5E] text-xs flex items-center justify-center px-2 py-1 rounded-full text-white">
+              8
+            </span>
             <BellIcon />
           </div>
           <div className="border border-gray-400 p-2.5 cursor-pointer rounded">
@@ -33,16 +36,16 @@ export default function MetricsSection() {
       <div className="flex mt-4 space-x-10">
         <div className="flex items-end w-full space-x-10">
           <div className="w-full max-w-xs">
-            <label className="text-xl font-medium">Fitness Tracker</label>
-            <div className="bg-white flex text-black flex-col pl-4 py-4 rounded shadow-md mt-2">
-              <div className="w-12 h-12 bg-[#EDF6FF] flex items-center justify-center">
+            <label className="text-xl font-medium">Activite Tracker</label>
+            <div className="bg-white flex text-black pl-4 py-[34px] rounded shadow-md mt-2 space-x-5">
+              <div className="w-20 h-20 bg-[#EDF6FF] flex items-center justify-center p-5">
                 <FitnessIcon />
               </div>
 
-              <label className="font-medium text-base mt-[11px]">
-                Steps Taken
-              </label>
-              <span className="font-medium text-2xl">18751</span>
+              <div className="flex flex-col justify-between">
+                <label className="font-medium text-2xl">Steps Taken</label>
+                <span className="font-normal text-4xl">18751</span>
+              </div>
             </div>
           </div>
           <div className="flex items-end w-full space-x-2">

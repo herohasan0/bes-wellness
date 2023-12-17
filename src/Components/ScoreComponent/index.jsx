@@ -113,9 +113,9 @@ export default function ScoreComponent() {
   };
 
   return (
-    <div className="mt-6">
-      <label className="font-medium text-xl">Heart Rate</label>
-      <div className="w-[500px] h-[450px] bg-white py-4 px-4 mt-2">
+    <div className="">
+      <label className="font-medium text-xl">Health Score</label>
+      <div className="w-[500px] h-[450px] bg-white p-4 mt-2">
         <ul className="justify-between font-medium text-center text-gray-500 text-xs flex bg-[#F2F5FA] rounded">
           {TabList.map((tab) => (
             <TabComponent
