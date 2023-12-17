@@ -2,7 +2,6 @@ import PageLayout from "@/Components/PageLayout";
 import TableComponent from "@/Components/TableComponent";
 import Image from "next/image";
 import React, { useState } from "react";
-import { Dialog } from "@headlessui/react";
 import OpenModal from "@/Components/OpenModal";
 import SparklesIcon from "@/Components/Icons/SparklesIcon";
 
@@ -112,7 +111,7 @@ export default function Radiology() {
         className="!px-12 py-10"
       >
         <button
-          className="absolute right-10 top-9"
+          className="absolute right-10 top-9 outline-0"
           onClick={() => {
             setIsOpen(false);
           }}

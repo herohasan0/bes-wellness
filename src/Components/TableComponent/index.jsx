@@ -8,6 +8,7 @@ export default function TableComponent({
   handleRowClick = () => {},
   handleColumnClick = () => {},
   className,
+  subRowComponenetHandler,
 }) {
   const {
     getTableProps,
@@ -99,6 +100,14 @@ export default function TableComponent({
                     );
                   })}
                 </tr>
+
+                {row.isExpanded && subRowComponenetHandler && (
+                  <tr>
+                    <td colSpan={visibleColumns.length}>
+                      {subRowComponenetHandler(row)}
+                    </td>
+                  </tr>
+                )}
               </Fragment>
             );
           })}
